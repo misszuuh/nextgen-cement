@@ -4,17 +4,17 @@ import SectionHeading from '../components/common/SectionHeading';
 import Button from '../components/common/Button';
 import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
 
+import axios from 'axios';
+
 const Contact = () => {
+
+  const sendEmailAPI = "http://localhost:3000/contact/sendEmail";
+
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (e) => setForm({ ...form, [e.target.name]: e.target.value });
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Form submission logic goes here
-    setSubmitted(true);
-  };
 
   const contactInfo = [
     { icon: <MapPin className="w-5 h-5 text-deep-green" />, label: 'Head Office', value: 'CBD Area, Sokoine Drive, Dar es Salaam, Tanzania' },
@@ -25,6 +25,25 @@ const Contact = () => {
   ];
 
   const inquiryTypes = ['Investment Inquiry', 'Partnership Proposal', 'Technical Question', 'Media & Press', 'General Inquiry'];
+
+ const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  try {
+    await axios.post(sendEmailAPI, form);
+
+    setSubmitted(true);
+    setForm({
+      name: "",
+      email: "",
+      subject: "",
+      message: ""
+    });
+  } catch (error) {
+    console.error("Error sending message:", error);
+    alert("Failed to send message. Try again later.");
+  }
+};
 
   return (
     <>

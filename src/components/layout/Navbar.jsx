@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
-import { Menu, X, Factory, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 // Navigation structure — grouped into dropdowns
@@ -213,14 +213,11 @@ const Navbar = () => {
 
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2.5 flex-shrink-0">
-            <div className="w-9 h-9 rounded-xl flex items-center justify-center"
-              style={{ background: 'linear-gradient(135deg, #0F4C3A, #0B2B5B)' }}>
-              <Factory className="w-5 h-5 text-white" />
-            </div>
-            <span className="text-lg font-bold tracking-tight">
-              <span style={{ color: '#0F4C3A' }}>NextGen</span>
-              <span style={{ color: '#0B2B5B' }}> Cement</span>
-            </span>
+            <img
+              src="/images/logo.png"
+              alt="NextGen Cement"
+              className="h-10 w-auto object-contain"
+            />
           </Link>
 
           {/* Desktop nav */}

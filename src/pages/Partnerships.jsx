@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import SectionHeading from '../components/common/SectionHeading';
 import Card from '../components/common/Card';
 import ImagePlaceholder from '../components/common/ImagePlaceholder';
@@ -122,7 +123,9 @@ const Partnerships = () => {
               We welcome conversations with potential partners across all categories.
               Reach out to explore how we can create value together.
             </p>
-            <Button variant="outline">Get in Touch</Button>
+            <Link to="/contact">
+              <Button variant="outline">Get in Touch</Button>
+            </Link>
           </motion.div>
         </div>
       </section>

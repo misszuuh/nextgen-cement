@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import SectionHeading from '../components/common/SectionHeading';
 import Card from '../components/common/Card';
-import ImagePlaceholder from '../components/common/ImagePlaceholder';
 import { TrendingUp, Globe, Building2, DollarSign } from 'lucide-react';
 
 const MarketOpportunity = () => {
@@ -103,12 +102,11 @@ const MarketOpportunity = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <ImagePlaceholder
-                title="Regional Market Map"
-                description="EAC + SADC market coverage visualization"
-                height="h-96"
-              />
-            </motion.div>
+              <img
+                src="/images/lc3map.jpg"
+                alt="Regional Market Map"
+                className="h-96 w-full object-cover rounded-xl"
+              />            </motion.div>
           </div>
         </div>
       </section>

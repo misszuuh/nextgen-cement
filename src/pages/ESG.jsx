@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import SectionHeading from '../components/common/SectionHeading';
 import Card from '../components/common/Card';
-import ImagePlaceholder from '../components/common/ImagePlaceholder';
 import { Leaf, Users, Shield, Sun } from 'lucide-react';
 
 const ESG = () => {
@@ -136,10 +135,10 @@ const ESG = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <ImagePlaceholder
-                title="ESG Impact Visualization"
-                description="Carbon reduction chart and community impact infographic"
-                height="h-96"
+              <img
+                src="/images/esg-impact.jpg"
+                alt="ESG Impact Visualization"
+                className="h-96 w-full object-cover rounded-xl"
               />
             </motion.div>
           </div>

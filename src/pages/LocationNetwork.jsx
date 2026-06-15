@@ -1,6 +1,5 @@
 import SectionHeading from '../components/common/SectionHeading';
 import Card from '../components/common/Card';
-import ImagePlaceholder from '../components/common/ImagePlaceholder';
 import { MapPin, Train, Ship, Truck } from 'lucide-react';
 
 const LocationNetwork = () => {
@@ -24,7 +23,7 @@ const LocationNetwork = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center mt-12">
             <div>
               <div className="bg-dark-blue text-white p-6 rounded-xl mb-6">
-                <h3 className="text-2xl font-bold mb-2">Galu Industrial Area</h3>
+                <h3 className="text-2xl font-bold mb-2">Gulwe Industrial Area</h3>
                 <p className="text-gray-200">Mpwapwa District, Dodoma Region, Tanzania</p>
                 <div className="mt-4 flex gap-4">
                   <div className="flex items-center gap-2"><Train className="w-5 h-5" /> SGR + Central Line</div>
@@ -46,10 +45,10 @@ const LocationNetwork = () => {
                 </div>
               </div>
             </div>
-            <ImagePlaceholder
-              title="Tanzania Logistics & Rail Map"
-              description="SGR overlay, export routes, and corridor visualization"
-              height="h-96"
+            <img
+              src="/images/gulwerailway.jpg"
+              alt="Tanzania Logistics & Rail Map"
+              className="h-96 w-full object-cover rounded-xl"
             />
           </div>
         </div>

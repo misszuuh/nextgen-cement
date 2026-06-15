@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import SectionHeading from '../components/common/SectionHeading';
 import Card from '../components/common/Card';
-import ImagePlaceholder from '../components/common/ImagePlaceholder';
 import { CheckCircle2, Factory, Recycle, Zap } from 'lucide-react';
 
 const Technology = () => {
@@ -46,10 +45,10 @@ const Technology = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <ImagePlaceholder
-                title="LC3 Production Flow Diagram"
-                description="CO₂ reduction comparison & process flow visualization"
-                height="h-96"
+              <img
+                src="/images/lc3map.jpg"
+                alt="LC3 Production Flow Diagram"
+                className="h-96 w-full object-cover rounded-xl"
               />
             </motion.div>
           </div>

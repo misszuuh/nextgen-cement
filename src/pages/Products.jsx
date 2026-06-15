@@ -1,7 +1,6 @@
 import { motion } from 'framer-motion';
 import SectionHeading from '../components/common/SectionHeading';
 import Card from '../components/common/Card';
-import ImagePlaceholder from '../components/common/ImagePlaceholder';
 import Button from '../components/common/Button';
 import { CheckCircle2, Package } from 'lucide-react';
 
@@ -49,7 +48,7 @@ const Products = () => {
             transition={{ duration: 0.7 }}
             className="max-w-3xl"
           >
-            <span className="text-light-sand text-sm font-semibold uppercase tracking-widest">Our Products</span>
+            <span className="text-light-sand text-sm font-semibold uppercase tracking-widest"></span>
             <h1 className="text-4xl md:text-5xl font-bold mt-3 mb-6">
               LC3 Cement Product Range
             </h1>
@@ -121,7 +120,7 @@ const Products = () => {
                 ))}
               </div>
               <div className="mt-8">
-                <Button variant="primary">Download Technical Data Sheet</Button>
+                {/* <Button variant="primary">Download Technical Data Sheet</Button> */}
               </div>
             </motion.div>
             <motion.div
@@ -129,10 +128,10 @@ const Products = () => {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <ImagePlaceholder
-                title="LC3 Cement Product Packaging"
-                description="Product bag design and branding visualization"
-                height="h-96"
+              <img
+                src="/images/lc3-process.jpg"
+                alt="LC3 Cement Product Packaging"
+                className="h-96 w-full object-cover rounded-xl"
               />
             </motion.div>
           </div>

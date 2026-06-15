@@ -1,11 +1,10 @@
 import { motion } from 'framer-motion';
-import ImagePlaceholder from '../common/ImagePlaceholder';
 import Button from '../common/Button';
 import { MapPin, Train, Leaf } from 'lucide-react';
 
 const FeaturedProject = () => {
   const highlights = [
-    { icon: <MapPin className="w-5 h-5 text-deep-green" />, text: 'Galu Industrial Area, Mpwapwa, Dodoma' },
+    { icon: <MapPin className="w-5 h-5 text-deep-green" />, text: 'Gulwe Industrial Area, Mpwapwa, Dodoma' },
     { icon: <Train className="w-5 h-5 text-deep-green" />, text: 'SGR & Central Line rail connectivity' },
     { icon: <Leaf className="w-5 h-5 text-deep-green" />, text: 'LC3 low-carbon cement technology' },
   ];
@@ -20,7 +19,7 @@ const FeaturedProject = () => {
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
           >
-            <span className="text-sm font-semibold text-deep-green uppercase tracking-widest">Featured Project</span>
+            <span className="text-sm font-semibold text-deep-green uppercase tracking-widest"></span>
             <h2 className="text-3xl md:text-4xl font-bold text-dark-blue mt-2 mb-6">
               1.2MTPA Cement Plant — Dodoma, Tanzania
             </h2>
@@ -36,7 +35,7 @@ const FeaturedProject = () => {
                 </div>
               ))}
             </div>
-            <Button variant="primary">View Full Project Details</Button>
+            {/* <Button variant="primary">View Full Project Details</Button> */}
           </motion.div>
 
           <motion.div
@@ -45,10 +44,10 @@ const FeaturedProject = () => {
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
           >
-            <ImagePlaceholder
-              title="Plant Site — Galu Industrial Area"
-              description="Aerial view / site plan of the 1.2MTPA facility"
-              height="h-96"
+            <img
+              src="/images/plant-site.jpg"
+              alt="Plant Site — Gulwe Industrial Area"
+              className="h-96 w-full object-cover rounded-xl"
             />
           </motion.div>
         </div>

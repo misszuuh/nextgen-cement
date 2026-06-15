@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin, Factory, ArrowUpRight } from 'lucide-react';
+import { Mail, Phone, MapPin, ArrowUpRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const socialLinks = [
@@ -63,15 +63,12 @@ const Footer = () => {
 
             {/* Brand column */}
             <div>
-              <Link to="/" className="flex items-center gap-2 mb-5 group w-fit">
-                <div className="w-9 h-9 rounded-lg flex items-center justify-center"
-                  style={{ background: 'rgba(34,197,94,0.15)', border: '1px solid rgba(34,197,94,0.3)' }}>
-                  <Factory className="w-5 h-5 text-green-400" />
-                </div>
-                <span className="text-lg font-bold tracking-tight">
-                  <span className="text-green-400">NextGen</span>
-                  <span className="text-white"> Cement</span>
-                </span>
+              <Link to="/" className="flex items-center mb-5 w-fit">
+                <img
+                  src="/images/logo.png"
+                  alt="NextGen Cement"
+                  className="h-10 w-auto object-contain brightness-0 invert"
+                />
               </Link>
               <p className="text-sm leading-relaxed mb-6" style={{ color: 'rgba(255,255,255,0.55)' }}>
                 Building Africa's low-carbon cement future with advanced LC3 technology from the heart of Tanzania.

@@ -67,7 +67,7 @@ const Home = () => {
           <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
             Join us in building sustainable, low-carbon cement solutions across East and Southern Africa.
           </p>
-          <Button variant="primary">Contact Investment Team</Button>
+          {/* <Button variant="primary">Contact Investment Team</Button> */}
         </div>
       </section>
     </>

@@ -18,7 +18,7 @@ const Contact = () => {
 
   const contactInfo = [
     { icon: <MapPin className="w-5 h-5 text-deep-green" />, label: 'Head Office', value: 'CBD Area, Sokoine Drive, Dar es Salaam, Tanzania' },
-    { icon: <MapPin className="w-5 h-5 text-deep-green" />, label: 'Project Site', value: 'Galu Industrial Area, Mpwapwa District, Dodoma Region' },
+    { icon: <MapPin className="w-5 h-5 text-deep-green" />, label: 'Project Site', value: 'Gulwe Industrial Area, Mpwapwa District, Dodoma Region' },
     { icon: <Phone className="w-5 h-5 text-deep-green" />, label: 'Phone', value: '+255 735 283 711' },
     { icon: <Mail className="w-5 h-5 text-deep-green" />, label: 'Email', value: 'ceo@gypsumplusmines.co.tz' },
     { icon: <Clock className="w-5 h-5 text-deep-green" />, label: 'Office Hours', value: 'Mon – Fri: 8:00 AM – 5:00 PM EAT' },
@@ -55,9 +55,9 @@ const Contact = () => {
             transition={{ duration: 0.7 }}
             className="max-w-3xl"
           >
-            <span className="text-light-sand text-sm font-semibold uppercase tracking-widest">Contact Us</span>
+            <span className="text-light-sand text-sm font-semibold uppercase tracking-widest"></span>
             <h1 className="text-4xl md:text-5xl font-bold mt-3 mb-6">
-              Let's Start a Conversation
+              Get in Touch
             </h1>
             <p className="text-lg text-gray-200 leading-relaxed">
               Whether you're an investor, partner, or simply want to learn more about NextGen Cement,

@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 // Navigation structure — grouped into dropdowns
 const NAV_ITEMS = [
+  {label: 'Home',  path: '/'},
+
   {
     label: 'Company',
     children: [

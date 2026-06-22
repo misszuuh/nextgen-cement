@@ -43,7 +43,7 @@ const Hero = () => {
       />
 
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/50" aria-hidden="true" />
+      <div className="absolute inset-0 bg-black/65" aria-hidden="true" />
 
       {/* Content */}
       <div className="relative z-10 flex items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8">

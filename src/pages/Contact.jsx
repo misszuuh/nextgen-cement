@@ -91,13 +91,42 @@ const Contact = () => {
                 ))}
               </div>
 
-              {/* Map placeholder */}
+              {/* Map placeholder
               <div className="h-64 bg-gradient-to-br from-gray-100 to-gray-200 rounded-xl flex items-center justify-center text-gray-400">
                 <div className="text-center">
                   <MapPin className="w-10 h-10 mx-auto mb-2 opacity-40" />
                   <p className="text-sm">Interactive Map — Dar es Salaam & Dodoma</p>
                 </div>
-              </div>
+              </div> */}
+
+              
+            {/* Map Morroco
+            <div className="h-64 rounded-xl overflow-hidden">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4010.302219269431!2d39.26072788908622!3d-6.775838009635596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c4d00385f39b1%3A0x6e7c11e0b4ed0c39!2sMorocco%20Square!5e0!3m2!1sen!2stz!4v1781733430537!5m2!1sen!2stz"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div> */}
+
+            {/* Project Location Map */}
+          <div className="h-80 rounded-xl overflow-hidden shadow-lg">
+            <iframe
+              title="NextGen Cement Project Location"
+              src="https://maps.google.com/maps?q=-6.192778,36.406944&z=15&output=embed"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+            
             </motion.div>
 
             {/* Contact Form */}
@@ -186,3 +215,16 @@ const Contact = () => {
 };
 
 export default Contact;
+
+{/* Map Morroco*/}
+<div className="h-64 rounded-xl overflow-hidden">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4010.302219269431!2d39.26072788908622!3d-6.775838009635596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c4d00385f39b1%3A0x6e7c11e0b4ed0c39!2sMorocco%20Square!5e0!3m2!1sen!2stz!4v1781733430537!5m2!1sen!2stz"
+    width="100%"
+    height="100%"
+    style={{ border: 0 }}
+    allowFullScreen
+    loading="lazy"
+    referrerPolicy="no-referrer-when-downgrade"
+  ></iframe>
+</div>

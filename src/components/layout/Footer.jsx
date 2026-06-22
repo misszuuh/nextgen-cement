@@ -65,9 +65,9 @@ const Footer = () => {
             <div>
               <Link to="/" className="flex items-center mb-5 w-fit">
                 <img
-                  src="/images/logo.png"
+                  src="/images/logo2.png"
                   alt="NextGen Cement"
-                  className="h-10 w-auto object-contain brightness-0 invert"
+                  className="h-12 w-auto object-contain"
                 />
               </Link>
               <p className="text-sm leading-relaxed mb-6" style={{ color: 'rgba(255,255,255,0.55)' }}>

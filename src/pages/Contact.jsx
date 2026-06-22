@@ -21,6 +21,7 @@ const Contact = () => {
     { icon: <MapPin className="w-5 h-5 text-deep-green" />, label: 'Project Site', value: 'Gulwe Industrial Area, Mpwapwa District, Dodoma Region' },
     { icon: <Phone className="w-5 h-5 text-deep-green" />, label: 'Phone', value: '+255 735 283 711' },
     { icon: <Mail className="w-5 h-5 text-deep-green" />, label: 'Email', value: 'ceo@gypsumplusmines.co.tz' },
+    { icon: <Mail className="w-5 h-5 text-deep-green" />, label: 'Email', value: 'ceo@nextgencement.co.tz' },
     { icon: <Clock className="w-5 h-5 text-deep-green" />, label: 'Office Hours', value: 'Mon – Fri: 8:00 AM – 5:00 PM EAT' },
   ];
 

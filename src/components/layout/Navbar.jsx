@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 // Navigation structure — grouped into dropdowns
 const NAV_ITEMS = [
-  { label: 'Home', path: '/' },
   {
     label: 'Company',
     children: [
@@ -35,7 +34,7 @@ const NAV_ITEMS = [
 ];
 
 // Dropdown menu component
-const DropdownMenu = ({ item, onClose }) => {
+const DropdownMenu = ({ item, onClose, scrolled, isHome }) => {
   const [open, setOpen] = useState(false);
   const ref = useRef(null);
   const location = useLocation();
@@ -56,7 +55,12 @@ const DropdownMenu = ({ item, onClose }) => {
       <button
         onClick={() => setOpen((v) => !v)}
         className={`flex items-center gap-1 text-sm font-medium transition-colors duration-200 px-1 py-1 rounded
-          ${isGroupActive ? 'text-deep-green' : 'text-gray-600 hover:text-deep-green'}`}
+          ${isGroupActive
+            ? 'text-deep-green'
+            : scrolled || !isHome
+              ? 'text-gray-600 hover:text-deep-green'
+              : 'text-white/90 hover:text-white'
+          }`}
       >
         {item.label}
         <motion.span animate={{ rotate: open ? 180 : 0 }} transition={{ duration: 0.2 }}>
@@ -187,34 +191,48 @@ const MobileSection = ({ item, onClose }) => {
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [visible, setVisible] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', onScroll);
+    const onScroll = () => {
+      const y = window.scrollY;
+      setVisible(y > 60);
+      setScrolled(y > 80);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  // On non-home pages, always show the navbar
+  const isHome = location.pathname === '/';
+  const shouldShow = !isHome || visible;
+
   return (
-    <nav
-      className="sticky top-0 z-50 transition-all duration-300"
+    <motion.nav
+      initial={false}
+      animate={{ y: shouldShow ? 0 : -100, opacity: shouldShow ? 1 : 0 }}
+      transition={{ duration: 0.35, ease: 'easeInOut' }}
+      className="fixed top-0 left-0 right-0 z-50"
       style={{
-        background: scrolled
+        background: scrolled || !isHome
           ? 'rgba(255,255,255,0.95)'
-          : 'rgba(255,255,255,1)',
-        backdropFilter: scrolled ? 'blur(20px)' : 'none',
-        boxShadow: scrolled
+          : 'rgba(255,255,255,0)',
+        backdropFilter: scrolled || !isHome ? 'blur(20px)' : 'none',
+        boxShadow: scrolled || !isHome
           ? '0 4px 24px rgba(15,76,58,0.08), 0 1px 0 rgba(15,76,58,0.06)'
-          : '0 1px 0 rgba(0,0,0,0.06)',
+          : 'none',
+        transition: 'background 0.3s ease, box-shadow 0.3s ease',
       }}
     >
       <div className="container-custom">
-        <div className="flex items-center justify-between h-18" style={{ height: '72px' }}>
+        <div className="flex items-center justify-between" style={{ height: '72px' }}>
 
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2.5 flex-shrink-0">
             <img
-              src="/images/logo.png"
+              src="/images/logo2.png"
               alt="NextGen Cement"
               className="h-10 w-auto object-contain"
             />
@@ -224,14 +242,19 @@ const Navbar = () => {
           <div className="hidden lg:flex items-center gap-1">
             {NAV_ITEMS.map((item) =>
               item.children ? (
-                <DropdownMenu key={item.label} item={item} />
+                <DropdownMenu key={item.label} item={item} scrolled={scrolled} isHome={isHome} />
               ) : (
                 <NavLink
                   key={item.path}
                   to={item.path}
                   className={({ isActive }) =>
                     `relative text-sm font-medium px-3 py-1.5 rounded transition-colors duration-200
-                    ${isActive ? 'text-deep-green' : 'text-gray-600 hover:text-deep-green'}`
+                    ${isActive
+                      ? 'text-deep-green'
+                      : scrolled || !isHome
+                        ? 'text-gray-600 hover:text-deep-green'
+                        : 'text-white/90 hover:text-white'
+                    }`
                   }
                 >
                   {({ isActive }) => (
@@ -269,11 +292,11 @@ const Navbar = () => {
               <AnimatePresence mode="wait" initial={false}>
                 {mobileOpen ? (
                   <motion.span key="x" initial={{ rotate: -90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: 90, opacity: 0 }} transition={{ duration: 0.15 }}>
-                    <X className="w-5 h-5 text-gray-700" />
+                    <X className={`w-5 h-5 ${scrolled || !isHome ? 'text-gray-700' : 'text-white'}`} />
                   </motion.span>
                 ) : (
                   <motion.span key="menu" initial={{ rotate: 90, opacity: 0 }} animate={{ rotate: 0, opacity: 1 }} exit={{ rotate: -90, opacity: 0 }} transition={{ duration: 0.15 }}>
-                    <Menu className="w-5 h-5 text-gray-700" />
+                    <Menu className={`w-5 h-5 ${scrolled || !isHome ? 'text-gray-700' : 'text-white'}`} />
                   </motion.span>
                 )}
               </AnimatePresence>
@@ -315,7 +338,7 @@ const Navbar = () => {
           </motion.div>
         )}
       </AnimatePresence>
-    </nav>
+    </motion.nav>
   );
 };
 

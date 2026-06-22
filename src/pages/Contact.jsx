@@ -217,15 +217,3 @@ const Contact = () => {
 
 export default Contact;
 
-{/* Map Morroco*/}
-<div className="h-64 rounded-xl overflow-hidden">
-  <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4010.302219269431!2d39.26072788908622!3d-6.775838009635596!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c4d00385f39b1%3A0x6e7c11e0b4ed0c39!2sMorocco%20Square!5e0!3m2!1sen!2stz!4v1781733430537!5m2!1sen!2stz"
-    width="100%"
-    height="100%"
-    style={{ border: 0 }}
-    allowFullScreen
-    loading="lazy"
-    referrerPolicy="no-referrer-when-downgrade"
-  ></iframe>
-</div>
